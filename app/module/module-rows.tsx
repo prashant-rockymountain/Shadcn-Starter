@@ -1,6 +1,6 @@
 "use client"
 import StatusChips from '@/components/reusableComponents/status-chips'
-import { TableCell, TableRow } from '@/components/ui/table'
+import { TableCell, TableRow } from '@/ui/table'
 import React from 'react'
 interface itemData {
     row: any,

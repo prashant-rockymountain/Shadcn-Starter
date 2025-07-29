@@ -10,7 +10,7 @@ import {
   RowSelectionState,
 } from "@tanstack/react-table";
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/ui/badge";
 import {
   Table,
   TableBody,
@@ -18,23 +18,23 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+} from "@/ui/table";
+import { Input } from "@/ui/input";
+import { Button } from "@/ui/button";
 import { IconGitBranch } from "@tabler/icons-react";
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
-} from "@/components/ui/pagination";
-import { Label } from "@/components/ui/label";
+} from "@/ui/pagination";
+import { Label } from "@/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/ui/select";
 import { Eye, Pencil, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";

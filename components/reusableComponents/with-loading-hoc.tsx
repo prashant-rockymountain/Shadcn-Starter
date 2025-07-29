@@ -1,6 +1,6 @@
 "use client"
 import React, { FC, ComponentType } from 'react'
-import { Skeleton } from '../ui/skeleton'
+import { Skeleton } from '../../ui/skeleton'
 
 interface WithLoadingProps {
   loading: boolean

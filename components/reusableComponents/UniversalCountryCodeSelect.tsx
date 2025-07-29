@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { CheckIcon, ChevronsUpDownIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/config/utils/utils";
+import { Button } from "@/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -11,13 +11,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
+} from "@/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+} from "@/ui/popover";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/ui/form";
 import { UseFormReturn } from "react-hook-form";
 
 interface CountryCodeSelectProps {

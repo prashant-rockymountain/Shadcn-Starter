@@ -1,7 +1,7 @@
 "use client";
 
 import * as Progress from "@radix-ui/react-progress";
-import { cn } from "@/lib/utils";
+import { cn } from "@/config/utils/utils";
 import { useEffect, useState } from "react";
 
 export default function ProgressBar({

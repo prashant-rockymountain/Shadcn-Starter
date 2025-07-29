@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header"
 import {
     SidebarInset,
     SidebarProvider,
-} from "@/components/ui/sidebar"
+} from "@/ui/sidebar"
 import { ReactNode } from "react"
 export default function UserLayout({ children }: { children: ReactNode }) {
     return (

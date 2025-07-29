@@ -1,14 +1,14 @@
 import React from 'react'
-import { Label } from './ui/label';
-import { Input } from './ui/input';
-import { Switch } from './ui/switch';
-import { DialogClose, DialogFooter } from './ui/dialog';
-import { Button } from './ui/button';
+import { Label } from '../ui/label';
+import { Input } from '../ui/input';
+import { Switch } from '../ui/switch';
+import { DialogClose, DialogFooter } from '../ui/dialog';
+import { Button } from '../ui/button';
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { RoleApis } from '@/lib/controller/httpApis';
+import { RoleApis } from '@/config/controller/httpApis';
 import { toast } from 'sonner';
 import { Loader } from 'lucide-react';
 

@@ -1,5 +1,5 @@
 import { LoginForm } from "@/components/login-form"
-import { GradientCardClass } from "@/helper/helper"
+import { GradientCardClass } from "@/config/helper/helper"
 export default function Page() {
   return (
     <div className="w-full max-w-sm">

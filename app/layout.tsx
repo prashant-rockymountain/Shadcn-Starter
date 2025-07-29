@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ActiveThemeProvider } from "@/components/active-theme";
-import { cn } from "@/lib/utils";
+import { cn } from "@/config/utils/utils";
 import ClientLayoutSwitcher from "@/components/client-layout-switcher";
 import Providers from "./providers";
 

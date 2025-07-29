@@ -5,14 +5,14 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { GradientCardClass } from "@/helper/helper";
+} from "@/ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
+import { GradientCardClass } from "@/config/helper/helper";
 import { Fragment, useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { SelectInput } from "./select-input";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+import { Label } from "../../ui/label";
+import { Input } from "../../ui/input";
 
 
 interface heading {

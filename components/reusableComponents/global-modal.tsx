@@ -6,7 +6,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@/ui/dialog"
 import { ReactNode } from "react"
 
 type CustomDialogProps = {

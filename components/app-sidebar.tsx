@@ -18,7 +18,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/ui/sidebar"
 import { useRouter } from "next/navigation"
 import { routeConfig } from "@/navigation/navigation"
 import Image from "next/image"

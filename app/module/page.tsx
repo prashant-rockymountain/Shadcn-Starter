@@ -1,7 +1,7 @@
 "use client"
 import GlobalTable from '@/components/reusableComponents/global-table'
 import withLoading from '@/components/reusableComponents/with-loading-hoc'
-import { RoleApis } from '@/lib/controller/httpApis'
+import { RoleApis } from '@/config/controller/httpApis'
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import ModuleRows from './module-rows'

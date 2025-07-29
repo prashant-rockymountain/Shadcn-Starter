@@ -1,6 +1,6 @@
 "use client"
 import StatusChips from '@/components/reusableComponents/status-chips'
-import { TableCell, TableRow } from '@/components/ui/table'
+import { TableCell, TableRow } from '@/ui/table'
 import { Pencil } from 'lucide-react'
 import React from 'react'
 interface itemData {

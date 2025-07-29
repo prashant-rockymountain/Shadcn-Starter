@@ -1,5 +1,5 @@
 "use client"
-import { Button } from '@/components/ui/button';
+import { Button } from '@/ui/button';
 import { useAuth } from '@/hooks/use-auth';
 import Image from 'next/image';
 export default function NotAuthorized() {
