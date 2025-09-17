@@ -1,14 +1,7 @@
-"use client"
-import * as React from "react"
-import {
-  IconHelp,
-  IconInnerShadowTop,
-  IconSearch,
-  IconSettings,
-} from "@tabler/icons-react"
-import { NavMain } from "@/components/nav-main"
-import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
+"use client";
+import * as React from "react";
+import { NavMain } from "@/components/nav-main";
+import { NavUser } from "@/components/nav-user";
 
 import {
   Sidebar,
@@ -18,10 +11,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/ui/sidebar"
-import { useRouter } from "next/navigation"
-import { routeConfig } from "@/navigation/navigation"
-import Image from "next/image"
+} from "@/ui/sidebar";
+import { useRouter } from "next/navigation";
+import { routeConfig } from "@/navigation/navigation";
+import Image from "next/image";
 
 const data = {
   user: {
@@ -48,23 +41,23 @@ const data = {
   //     icon: IconSearch,
   //   },
   // ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <SidebarMenu>
-          <SidebarMenuItem >
+          <SidebarMenuItem>
             <SidebarMenuButton
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <span >
-                <Image src="/images/logo.png" alt="" width={100} height={80} />
+              <span>
+                {/* <Image src="/images/logo.png" alt="" width={100} height={80} /> */}
                 {/* <IconInnerShadowTop className="!size-5" /> */}
-               
+                Logo
               </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -78,5 +71,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

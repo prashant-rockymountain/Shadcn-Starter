@@ -5,26 +5,23 @@ import { ActiveThemeProvider } from "@/components/active-theme";
 import { cn } from "@/config/utils/utils";
 import ClientLayoutSwitcher from "@/components/client-layout-switcher";
 import Providers from "./providers";
+import { ErrorBoundary } from "@/components/error-boundary";
 
 const META_THEME_COLORS = {
   light: "#fffff",
-  dark: "#09090b"
-}
+  dark: "#09090b",
+};
 
 export const metadata: Metadata = {
   title: "Loop | Store Admin",
   description: "Generated Loopos",
-}
-
+};
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
-
 }) {
-
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -47,20 +44,23 @@ export default function RootLayout({
 
       <body
         className={cn(
-          "text-foreground group/body overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]")}
+          "text-foreground group/body overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]"
+        )}
       >
-        <Providers>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ActiveThemeProvider>
-              <ClientLayoutSwitcher>{children}</ClientLayoutSwitcher>
-            </ActiveThemeProvider>
-          </ThemeProvider>
-        </Providers>
+        <ErrorBoundary>
+          <Providers>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <ActiveThemeProvider>
+                <ClientLayoutSwitcher>{children}</ClientLayoutSwitcher>
+              </ActiveThemeProvider>
+            </ThemeProvider>
+          </Providers>
+        </ErrorBoundary>
       </body>
     </html>
   );
