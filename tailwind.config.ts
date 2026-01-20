@@ -5,6 +5,7 @@ const config: Config = {
     "./components/**/*.{ts,tsx}",
     "./src/app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "!./src/app/invoiceManagement/generateInvoice/generateInvoicePdf/**/*",
   ],
   prefix: "",
   theme: {

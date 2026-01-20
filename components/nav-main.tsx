@@ -15,49 +15,37 @@ import {
   CollapsibleTrigger,
 } from "../ui/collapsible";
 import { ChevronRight } from "lucide-react";
-import { Fragment, useEffect, useState } from "react";
-import Icon from "@/components/tabler-icon";
+import { Fragment, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useAbility } from "@/hooks/use-ability";
-
-interface SingleNav {
-  title: string;
-  path: string;
-  icon: string;
-  subject: string;
-  action: string;
-  children?:
-    | undefined
-    | {
-        title: string;
-        path: string;
-        icon: string;
-        subject: string;
-        action: string;
-      }[];
-}
+import { MenuItem } from "@/types/types";
+import { useSelector } from "react-redux";
+import { StoreRootState } from "@/reduxstore/redux-store";
 
 interface Navitems {
-  items: SingleNav[];
+  items: MenuItem[];
 }
 
 export function NavMain({ items }: Navitems) {
   const router = useRouter();
   const pathname = usePathname();
   const { ability } = useAbility();
-
+  // const notificationsCount = useSelector(
+  //   (state: StoreRootState) => state.data?.userdata?.user?.notificationsCount
+  // );
   const [openCollapsible, setOpenCollapsible] = useState<string | null>(null);
 
-  const handleClick = (item: SingleNav, parentPath: string | null) => {
+  const handleClick = (item: MenuItem, parentPath: string | null) => {
     router.push(item.path);
     if (!item?.path.includes(parentPath as string)) {
       setOpenCollapsible(null);
     }
   };
 
-  const HasNoChild = (item: SingleNav) => {
-    if (ability?.can(item.action, item.subject)) {
+  const HasNoChild = (item: MenuItem) => {
+    if (ability?.can("read", item.subject)) {
+      const IconComponent = item.icon;
       return (
         <SidebarMenuItem>
           <SidebarMenuButton
@@ -66,16 +54,23 @@ export function NavMain({ items }: Navitems) {
             tooltip={item.title}
             isActive={!!(item.path === pathname)}
           >
-            <Icon icon={item.icon} />
+            <IconComponent />
             <span>{item.title}</span>
+            {/* {item.subject == "notifications" &&
+              (notificationsCount ?? 0) > 0 && (
+                <span className="ml-auto inline-flex items-center justify-center px-2 py-0.5 rounded-full text-xs font-medium leading-none text-red-100 bg-red-600">
+                  {notificationsCount}
+                </span>
+              )} */}
           </SidebarMenuButton>
         </SidebarMenuItem>
       );
     }
   };
 
-  const HaveChild = (item: SingleNav) => {
-    if (ability?.can(item.action, item.subject)) {
+  const HaveChild = (item: MenuItem) => {
+    if (ability?.can("read", item.subject)) {
+      const IconComponent = item.icon;
       const isOpen = openCollapsible === item.title;
       return (
         <Collapsible
@@ -95,7 +90,7 @@ export function NavMain({ items }: Navitems) {
                 style={{ cursor: "pointer" }}
                 isActive={pathname.includes(item.path)}
               >
-                <Icon icon={item.icon} />
+                <IconComponent />
                 <span>{item.title}</span>
                 <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
               </SidebarMenuButton>
@@ -111,7 +106,7 @@ export function NavMain({ items }: Navitems) {
                       isActive={!!(subItem.path === pathname)}
                       className="w-full justify-start gap-3 px-2 py-1.5 h-auto text-sm hover:bg-sidebar-accent rounded-md transition-colors"
                     >
-                      <Icon icon={subItem.icon} />
+                      <subItem.icon />
                       <span className="truncate">{subItem.title}</span>
                     </SidebarMenuSubButton>
                   </SidebarMenuSubItem>

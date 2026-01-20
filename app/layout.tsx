@@ -13,7 +13,7 @@ const META_THEME_COLORS = {
 };
 
 export const metadata: Metadata = {
-  title: "Loop | Store Admin",
+  title: "Shadcn Starter | Admin",
   description: "Generated Loopos",
 };
 

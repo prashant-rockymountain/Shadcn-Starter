@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 // ===============================next APP props types ========================//
 
 import { AnyMongoAbility } from "@casl/ability";
@@ -84,3 +85,13 @@ export type AbilityContextvalue = {
 //=============================== grid===========================//
 
 export type GridSpan = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+
+//-----------------layout------------------//
+export interface MenuItem {
+  title: string;
+  path: string;
+  icon: LucideIcon;
+  subject: string;
+  children?: MenuItem[];
+}

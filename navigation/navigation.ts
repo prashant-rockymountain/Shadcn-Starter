@@ -1,31 +1,54 @@
-export const routeConfig = [
+import { MenuItem } from "@/types/types";
+import {
+  LayoutDashboard,
+  BarChart3,
+  Building2,
+  Users,
+  Truck,
+  Plus,
+  Eye,
+  FileText,
+  Receipt,
+  PlusCircle,
+  Mail,
+  Shield,
+  DollarSign,
+  File,
+  Bell,
+} from "lucide-react";
+
+export const routeConfig: MenuItem[] = [
   {
     title: "Dashboard",
     path: "/dashboard",
-    icon: "tabler:layout-dashboard",
+    icon: LayoutDashboard,
     subject: "dashboard",
-    action: "read",
   },
   {
-    title: "Designation",
-    path: "/designation",
-    icon: "tabler:user-check",
-    subject: "designation",
-    action: "read",
+    title: "Parent",
+    icon: Truck,
+    subject: "parent",
+    path: "/parent",
+    children: [
+      {
+        title: "Child",
+        path: "/parent/Child",
+        icon: Plus,
+        subject: "parent",
+      },
+      {
+        title: "Child",
+        path: "/parent/Child",
+        icon: Eye,
+        subject: "parent",
+      },
+    ],
   },
+
   {
-    title: "Designation Options",
-    path: "/module",
-    icon: "tabler:versions",
-    subject: "modules",
-    action: "read",
+    title: "Users",
+    path: "/user",
+    icon: Users,
+    subject: "user",
   },
-  {
-    title: "Designation Options",
-    path: "/module",
-    icon: "tabler:versions",
-    subject: "modules",
-    action: "read",
-  },
-  
 ];
